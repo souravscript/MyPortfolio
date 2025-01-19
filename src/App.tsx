@@ -1,18 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Download, Code, ExternalLink, Github, Linkedin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Timeline from './components/Timeline';
-import profilePic from './assets/profilePic.jpeg'
+import profilePic from './assets/profile__pic.png'
 import Education from './components/Education';
 function App() {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+
+  const file_id="1QyRkSfdzQTlplkek22o85sVHoe1lMX5x"
   const skills = {
     'Programming Languages': ['JavaScript', 'C++', 'TypeScript', 'Java', 'C'],
     'Framework/Libraries': ['ReactJs', 'React Native', 'NodeJs', 'NextJS', 'ExpressJs', 'Redux', 'TailwindCSS'],
     'Tools': ['Docker', 'REST API', 'Jest', 'SQL', 'HTTP', 'Github', 'VS Code', 'Postman', 'Vercel', 'Firebase'],
   };
 
-  const projects = [
+
+  const freeLancing=[
     {
       title: 'Plantholics',
       description: 'A comprehensive full-stack mobile application for buying, selling, and trading plants, seeds, and flowers. Features include authentication, marketplace functionality, expert consultations, and plant identification.',
@@ -26,6 +43,8 @@ function App() {
       skills: ['React Native', 'Node.js', 'PostgreSQL', 'GitHub Actions', 'Husky', 'React Navigation'],
       image: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&q=80&w=400'
     },
+  ]
+  const projects = [
     {
       title: 'VoiceGPT',
       description: 'A cross-platform voice chat app built with React Native using OpenAI API for text generation and real-time voice response.',
@@ -74,7 +93,14 @@ function App() {
                 className="bg-blue-600 text-white px-6 py-3 rounded-lg flex items-center space-x-2 hover:bg-blue-700 transition"
               >
                 <Download size={20} />
-                <span>Download CV</span>
+                <a
+                  href={`https://drive.google.com/uc?export=download&id=${file_id}`} // Replace [File ID] with your actual Google Drive file ID
+                  download
+                  className="text-white transition"
+                >
+                  <span>Download CV</span>
+                </a>
+
               </motion.button>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
@@ -82,7 +108,7 @@ function App() {
                 className="border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 px-6 py-3 rounded-lg flex items-center space-x-2 hover:bg-blue-50 dark:hover:bg-dark-800 transition"
               >
                 <Mail size={20} />
-                <span>Contact Me</span>
+                <a href="#contact" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"><span>Contact Me</span></a>
               </motion.button>
             </div>
           </motion.div>
@@ -101,10 +127,6 @@ function App() {
           </motion.div>
         </div>
       </section>
-
-      {/* Education Section */}
-      <Education/>
-
 
       {/* Skills Section */}
       <section id="skills" className="py-20 bg-gray-100 dark:bg-dark-800 px-4 md:px-0">
@@ -144,6 +166,10 @@ function App() {
         </div>
       </section>
 
+      {/* Education Section */}
+      <Education/>
+
+
       {/* Experience Section */}
       <section id="experience" className="py-20 px-4 md:px-0">
         <div className="max-w-7xl mx-auto">
@@ -158,6 +184,8 @@ function App() {
           <Timeline />
         </div>
       </section>
+
+      {/* Freelancing */}
 
       {/* Projects Section */}
       <section id="projects" className="py-20 bg-white dark:bg-dark-800 px-4 md:px-0">
@@ -283,21 +311,21 @@ function App() {
             <div className="flex space-x-6 mt-4 md:mt-0">
               <motion.a 
                 whileHover={{ scale: 1.1, y: -2 }}
-                href="#" 
+                href="https://github.com/souravscript" 
                 className="hover:text-blue-400 transition"
               >
                 <Github size={24} />
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.1, y: -2 }}
-                href="#" 
+                href="https://www.linkedin.com/in/shivam-sourav-305132168/" 
                 className="hover:text-blue-400 transition"
               >
                 <Linkedin size={24} />
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.1, y: -2 }}
-                href="#" 
+                href="souravshivam1857@gmail.com" 
                 className="hover:text-blue-400 transition"
               >
                 <Mail size={24} />

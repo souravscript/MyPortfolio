@@ -44,10 +44,10 @@ const Navbar = () => {
             className="hidden md:flex items-center space-x-4"
           >
             <ThemeToggle />
-            <a href="https://github.com" className="text-gray-600 dark:text-dark-300 hover:text-gray-900 dark:hover:text-dark-50">
+            <a href="https://github.com/souravscript" className="text-gray-600 dark:text-dark-300 hover:text-gray-900 dark:hover:text-dark-50">
               <Github size={20} />
             </a>
-            <a href="https://linkedin.com" className="text-gray-600 dark:text-dark-300 hover:text-gray-900 dark:hover:text-dark-50">
+            <a href="https://www.linkedin.com/in/shivam-sourav-305132168/" className="text-gray-600 dark:text-dark-300 hover:text-gray-900 dark:hover:text-dark-50">
               <Linkedin size={20} />
             </a>
             <a href="mailto:example@email.com" className="text-gray-600 dark:text-dark-300 hover:text-gray-900 dark:hover:text-dark-50">
