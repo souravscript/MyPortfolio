@@ -279,7 +279,7 @@ function App() {
       <footer className="bg-gray-900 dark:bg-dark-950 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 md:px-0">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <p>© 2024 Saurav Kumar. All rights reserved.</p>
+            <p>© 2024 Shivam Sourav. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <motion.a 
                 whileHover={{ scale: 1.1, y: -2 }}
